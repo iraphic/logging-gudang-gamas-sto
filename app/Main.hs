@@ -146,7 +146,7 @@ showItem items = showItemFunc (length items) (take 2 items)
             ++ showItemFunc count rest
 
 showAllItem :: [LogItem] -> String
-showAllItem [] = replicate 90 '='
+showAllItem [] = replicate 143 '='
 showAllItem (item : rest) =
     "ID: " ++ show (itemId item)
         ++ "\nNama Barang: "
