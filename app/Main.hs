@@ -151,7 +151,7 @@ showAllItem (item : rest) =
         ++ "\nDeskripsi: "
         ++ description item
         ++ "\n"
-        ++ replicate 55 '-'
+        ++ replicate 70 '-'
         ++ "\n"
         ++ showAllItem rest
 
