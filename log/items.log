@@ -1,0 +1,8 @@
+1 Tiang 10 satuan buah, Tiang tinggi 9 Meter
+2 ODP-Solid 0 satuan buah, ODP terbaru berbentuk kubik, warna putih
+3 ODP-Closure-Aerial 0 satuan buah, ODP model lama menggantung di kabel, warna hitam
+4 ODP-Wall 0 satuan buah, ODP yang menempel di dinding, warna putih
+5 ODP-Pedestal 0 satuan buah, ODP berbentuk silinder duduk di tanah, warna hijau
+6 Kabel-Feeder 0 satuan meter, kabel fiber optik 288 core dari FTM ke ODC
+7 Kabel-Distribusi 0 satuan meter, kabel fiber optik 144 core dari ODC ke ODP
+8 Kable-SC-LC 0 satuan meter, Kabel untuk OLT
