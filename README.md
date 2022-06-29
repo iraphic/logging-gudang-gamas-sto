@@ -1,4 +1,4 @@
-# Warehouse Logging Application
+# Aplikasi Logging Gudang Gamas STO
 
 <img src="picture/user_interface.png" alt="User interface" style="width: 80%;"/>
 
