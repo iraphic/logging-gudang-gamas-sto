@@ -11,7 +11,7 @@ import System.IO (hFlush, stdout)
 runProgram :: [LogItem] -> [LogMessage] -> IO ()
 runProgram items messages = do
     putStrLn "\n\n\n=============== Sistem Pencatatan Gudang Gamas STO CPP Witel Jakarta Pusat ==============="
-    putStrLn $ replicate 87 '='
+    putStrLn $ replicate 90 '='
     putStrLn $ showAllItem items
     putStrLn "(1) Isi ulang barang | (2) Ambil barang | (3) Tambah barang baru | (4) Lihat histori keluar masuk barang | (5) Cari histori barang | (6) Keluar"
     choice <- prompt "Masukkan pilihan: "
@@ -151,7 +151,7 @@ showAllItem (item : rest) =
         ++ "\nDeskripsi: "
         ++ description item
         ++ "\n"
-        ++ replicate 29 '-'
+        ++ replicate 55 '-'
         ++ "\n"
         ++ showAllItem rest
 
