@@ -15,3 +15,6 @@ Aplikasi logging gudang gamas STO untuk mencatat semua keluar masuk barang. Dibu
 2. Buka terminal, dan ubah direktori ke proyek ini
 3. Jalankan `$ cabal build`
 4. Setelah berhasil dibangun, jalankan proyek ini dengan `$ cabal run`
+
+## File presentasi
+https://docs.google.com/presentation/d/1ReS--nCJ2yf3ePQzS4tvLSHiDUXHotJxkSi74cVtZg8/
