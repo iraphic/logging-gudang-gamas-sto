@@ -51,8 +51,8 @@ runProgram items messages = do
 
             logMessage <-
                 if extractedItem == UnknownItem
-                    then makeLogMessage extractedItem "ERR"
-                    else makeLogMessage (extractedItem{storage = amount}) "IN"
+                    then makeLogMessage extractedItem "ERROR"
+                    else makeLogMessage (extractedItem{storage = amount}) "MASUK"
 
             parseLogMessage logMessage
             emptyPrompt <- prompt "Tekan Enter untuk lanjut"
@@ -89,18 +89,18 @@ runProgram items messages = do
 
             logMessage <-
                 if extractedItem == UnknownItem
-                    then makeLogMessage extractedItem "ERR"
+                    then makeLogMessage extractedItem "ERROR"
                     else
                         if amount > storage extractedItem
-                            then makeLogMessage (extractedItem{storage = 0}) "ERR"
-                            else makeLogMessage (extractedItem{storage = amount}) "OUT"
+                            then makeLogMessage (extractedItem{storage = 0}) "ERROR"
+                            else makeLogMessage (extractedItem{storage = amount}) "KELUAR"
             parseLogMessage logMessage
-            emptyPrompt <- prompt "Press enter to continue."
+            emptyPrompt <- prompt "Tekan Enter untuk lanjut."
             runProgram updatedItems messages
 
         "3" -> do
             putStrLn "\nAnda akan menambahkan barang baru ke dalam inventaris, harap isi informasi di bawah ini: "
-            name <- prompt "Item name: "
+            name <- prompt "Nama barang: "
             putStr "Jumlah: "
             hFlush stdout
             storage <- do
@@ -111,7 +111,7 @@ runProgram items messages = do
             description <- prompt "Deskripsi barang: "
             newItems <- addNewItem items name storage description
             parseLogItem newItems
-            logMessage <- makeLogMessage (last newItems) "NEW"
+            logMessage <- makeLogMessage (last newItems) "BARU"
             parseLogMessage logMessage
             emptyPrompt <- prompt "Berhasil menambahkan barang baru! Tekan Enter untuk melanjutkan."
             runProgram newItems messages

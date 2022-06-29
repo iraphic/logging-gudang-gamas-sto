@@ -15,7 +15,7 @@ data LogMessage
     | Unknown
     deriving (Show)
 
-data Status = IN | OUT | NEW | ERR deriving (Show, Read)
+data Status = MASUK | KELUAR | BARU | ERROR deriving (Show, Read)
 
 secondSinceEpoch :: UTCTime -> Int
 secondSinceEpoch =
@@ -32,7 +32,7 @@ makeLogMessage item status = do
                         { item = 0
                         , quantity = 0
                         , timestamp = currentTime
-                        , status = ERR
+                        , status = ERROR
                         }
                 else
                     LogMessage
