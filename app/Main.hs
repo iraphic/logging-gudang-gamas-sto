@@ -20,6 +20,7 @@ runProgram items messages = do
           --  putStrLn $ showAllItem items
           --  empty <- prompt "Tekan Enter untuk kembali"
           --  runProgram items messages
+
         "1" -> do
             putStrLn "Anda akan mengisi ulang barang: "
             -- Insert ItemID
@@ -56,6 +57,7 @@ runProgram items messages = do
             parseLogMessage logMessage
             emptyPrompt <- prompt "Tekan Enter untuk lanjut"
             runProgram newRestockedItems messages
+
         "2" -> do
             putStrLn "Anda akan mengambil barang: "
             -- Insert ItemID
@@ -95,6 +97,7 @@ runProgram items messages = do
             parseLogMessage logMessage
             emptyPrompt <- prompt "Press enter to continue."
             runProgram updatedItems messages
+
         "3" -> do
             putStrLn "\nAnda akan menambahkan barang baru ke dalam inventaris, harap isi informasi di bawah ini: "
             name <- prompt "Item name: "
@@ -112,9 +115,11 @@ runProgram items messages = do
             parseLogMessage logMessage
             emptyPrompt <- prompt "Berhasil menambahkan barang baru! Tekan Enter untuk melanjutkan."
             runProgram newItems messages
+
         "6" -> do
             putStrLn "Keluar..."
             putStrLn "Sampai jumpa! Terima kasih"
+
         _ -> do
             empty <- prompt "Salah inputan! Tekan Enter untuk mencoba lagi."
             runProgram items messages
@@ -144,11 +149,11 @@ showAllItem :: [LogItem] -> String
 showAllItem [] = replicate 58 '='
 showAllItem (item : rest) =
     "ID: " ++ show (itemId item)
-        ++ "\nNama: "
+        ++ "\nNama Barang: "
         ++ itemName item
-        ++ "\nSisa jumlah: "
+        ++ "\nJumlah Barang: "
         ++ show (storage item)
-        ++ "\nDeskripsi: "
+        ++ "\nDeskripsi Barang: "
         ++ description item
         ++ "\n"
         ++ replicate 70 '-'
